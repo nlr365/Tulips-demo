@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d6a2d">
+    <meta name="description" content="Tulips Eventz — Professional Wedding & Event Planners in Coimbatore, Tamil Nadu.">
+    <title>Services | Tulips Eventz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="petals-canvas" id="petalsCanvas"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="services.html" onclick="closeMob()">Services</a>
+  <a href="gallery.html" onclick="closeMob()">Gallery</a>
+  <a href="booking.html" onclick="closeMob()">Booking</a>
+</div>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-logo">
+    <div class="logo-name">Tulips<span>Eventz</span></div>
+    <div class="logo-sub">Events & Wedding Planners</div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html" class="nav-cta">Book Now</a>
+  </div>
+  <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="services-bg" style="padding-top:120px;">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">✦ What We Do</span>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-sub">From intimate celebrations to grand weddings — crafted with love and precision.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up"><div class="svc-icon">💍</div><div class="svc-name">Wedding Planning</div><div class="svc-desc">Complete wedding management — venue, decor, catering, photography, all in one place.</div><div class="svc-price">From ₹50,000</div></div>
+      <div class="service-card fade-up"><div class="svc-icon">🎂</div><div class="svc-name">Birthday Parties</div><div class="svc-desc">Theme-based birthday setups, surprise parties, and milestone celebrations.</div><div class="svc-price">From ₹15,000</div></div>
+      <div class="service-card fade-up"><div class="svc-icon">🏢</div><div class="svc-name">Corporate Events</div><div class="svc-desc">Product launches, conferences, award nights — professionally executed.</div><div class="svc-price">From ₹30,000</div></div>
+      <div class="service-card fade-up"><div class="svc-icon">💄</div><div class="svc-name">Bridal Makeup</div><div class="svc-desc">Professional bridal makeup and styling. Glow like a queen on your big day.</div><div class="svc-price">From ₹8,000</div></div>
+      <div class="service-card fade-up"><div class="svc-icon">📸</div><div class="svc-name">Photography & Video</div><div class="svc-desc">Candid photography, cinematic videos, drone shots — every memory captured beautifully.</div><div class="svc-price">From ₹20,000</div></div>
+      <div class="service-card fade-up"><div class="svc-icon">🎵</div><div class="svc-name">DJ & MC</div><div class="svc-desc">Professional DJ, live anchoring, and stage management for all events.</div><div class="svc-price">From ₹10,000</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" class="pkg-bg">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">✦ Pricing</span>
+      <h2 class="section-title">Wedding Packages</h2>
+      <p class="section-sub">Transparent pricing, zero hidden charges.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card fade-up">
+        <div class="pkg-name">Silver</div>
+        <div class="pkg-price">₹75,000<span>/event</span></div>
+        <ul class="pkg-list">
+          <li>Stage & venue decoration</li>
+          <li>Basic floral design</li>
+          <li>Photography — 8 hours</li>
+          <li>Sound & DJ</li>
+        </ul>
+        <button class="pkg-book pkg-book-outline" onclick="quickBook('Silver')">Enquire Silver</button>
+      </div>
+      <div class="pkg-card featured fade-up">
+        <div class="pkg-popular">⭐ Most Popular</div>
+        <div class="pkg-name">Gold</div>
+        <div class="pkg-price">₹1,50,000<span>/event</span></div>
+        <ul class="pkg-list">
+          <li>Full venue management</li>
+          <li>Premium floral design</li>
+          <li>Photo + Cinematic video</li>
+          <li>DJ + MC + Entertainment</li>
+        </ul>
+        <button class="pkg-book pkg-book-primary" onclick="quickBook('Gold')">Book Gold ✨</button>
+      </div>
+      <div class="pkg-card fade-up">
+        <div class="pkg-name">Platinum</div>
+        <div class="pkg-price">₹3,00,000<span>/event</span></div>
+        <ul class="pkg-list">
+          <li>Luxury venue coordination</li>
+          <li>Designer floral themes</li>
+          <li>Drone + Reel videography</li>
+          <li>Live band + Performers</li>
+        </ul>
+        <button class="pkg-book pkg-book-outline" onclick="quickBook('Platinum')">Enquire Platinum</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Tulips Eventz</div>
+      <p class="footer-desc">Creating magical moments and grand celebrations since 2016. Your trusted partner for weddings and events in Coimbatore.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/tulipseventsandweddingplanners" target="_blank" class="social-btn">📸</a>
+        <a href="https://wa.me/919597082875" target="_blank" class="social-btn">💬</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contacts">
+        <div class="footer-contact-item">📞 +91 94451 06887</div>
+        <div class="footer-contact-item">💬 +91 95970 82875</div>
+        <div class="footer-contact-item">📧 tulipseventscbe@gmail.com</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Location</div>
+      <div class="footer-contacts">
+        <div class="footer-contact-item">📍 Coimbatore, Tamil Nadu</div>
+        <div class="footer-contact-item">⏰ Mon - Sat: 9 AM - 8 PM</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Tulips Eventz · Coimbatore, Tamil Nadu</div>
+    <div class="version-badge">v5.0 · Demo Version</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919597082875" target="_blank">💬</a>
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/db-demo.js"></script>
+</body>
+</html>

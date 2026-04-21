@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d6a2d">
+    <title>Book Your Event | Tulips Eventz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .calendar-container {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .cal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .cal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            text-align: center;
+        }
+        .cal-day-head {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+        .cal-day {
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            background: #fdf9f5;
+            cursor: pointer;
+        }
+        .cal-day:hover { background: var(--warm); }
+        .cal-day.booked {
+            background: #fee;
+            color: var(--red);
+            text-decoration: line-through;
+            cursor: not-allowed;
+        }
+        .cal-day.selected {
+            background: var(--green);
+            color: white;
+        }
+        .cal-legend {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            font-size: 11px;
+        }
+        .legend-item { display: flex; align-items: center; gap: 5px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .dot.available { background: #fdf9f5; border: 1px solid #ddd; }
+        .dot.booked { background: #fee; border: 1px solid var(--red); }
+    </style>
+</head>
+<body>
+
+<div class="petals-canvas" id="petalsCanvas"></div>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-logo">
+    <div class="logo-name">Tulips<span>Eventz</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html" class="nav-cta">Book Now</a>
+  </div>
+</nav>
+
+<section class="booking-bg" style="padding-top:120px; min-height:100vh;">
+  <div class="container">
+    <div class="booking-inner">
+      <div class="booking-info fade-up">
+        <span class="section-tag">✦ Step 1: Select Date</span>
+        <h2 class="section-title">Check Availability</h2>
+        <p class="section-sub">Select your event date on the calendar. Red dates are already booked!</p>
+        
+        <div class="calendar-container">
+            <div class="cal-header">
+                <div style="font-weight:700; color:var(--green);">April 2026</div>
+                <div style="font-size:12px; color:var(--muted);">‹ May ›</div>
+            </div>
+            <div class="cal-grid">
+                <div class="cal-day-head">Su</div><div class="cal-day-head">Mo</div><div class="cal-day-head">Tu</div>
+                <div class="cal-day-head">We</div><div class="cal-day-head">Th</div><div class="cal-day-head">Fr</div><div class="cal-day-head">Sa</div>
+                <!-- Mock days -->
+                <div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day booked">4</div>
+                <div class="cal-day">5</div><div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day">8</div>
+                <div class="cal-day booked">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div>
+                <div class="cal-day">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div>
+                <div class="cal-day booked">17</div><div class="cal-day">18</div><div class="cal-day">19</div><div class="cal-day">20</div>
+                <div class="cal-day selected">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div>
+                <div class="cal-day booked">25</div><div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div>
+            </div>
+            <div class="cal-legend">
+                <div class="legend-item"><div class="dot available"></div> Available</div>
+                <div class="legend-item"><div class="dot booked"></div> Booked</div>
+            </div>
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <div class="form-card">
+          <h3>Step 2: Fill Details 💐</h3>
+          <p>Tell us about your April 21st event!</p>
+          <div class="form-divider">
+            <div class="field"><label>Your Name *</label><input type="text" id="f-name"></div>
+            <div class="field"><label>Phone Number *</label><input type="tel" id="f-phone"></div>
+          </div>
+          <div class="field"><label>Event Type *</label>
+            <select id="f-type">
+              <option value="">Select event type</option>
+              <option>Wedding</option><option>Birthday</option><option>Corporate</option>
+            </select>
+          </div>
+          <div class="field"><label>Approx Guests</label><input type="number" id="f-guests"></div>
+          <input type="hidden" id="f-date" value="2026-04-21">
+          <div class="field"><label>Message</label><textarea rows="3" id="f-msg"></textarea></div>
+          <button class="submit-btn" onclick="submitForm()">Confirm Date & Enquire</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Tulips Eventz</div>
+      <p class="footer-desc">Creating magical moments and grand celebrations since 2016. Your trusted partner for weddings and events in Coimbatore.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/tulipseventsandweddingplanners" target="_blank" class="social-btn">📸</a>
+        <a href="https://wa.me/919597082875" target="_blank" class="social-btn">💬</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contacts">
+        <div class="footer-contact-item">📞 +91 94451 06887</div>
+        <div class="footer-contact-item">💬 +91 95970 82875</div>
+        <div class="footer-contact-item">📧 tulipseventscbe@gmail.com</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Location</div>
+      <div class="footer-contacts">
+        <div class="footer-contact-item">📍 Coimbatore, Tamil Nadu</div>
+        <div class="footer-contact-item">⏰ Mon - Sat: 9 AM - 8 PM</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Tulips Eventz · Coimbatore, Tamil Nadu</div>
+    <div class="version-badge">v5.0 · Demo Version</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919597082875" target="_blank">💬</a>
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/db-demo.js"></script>
+</body>
+</html>

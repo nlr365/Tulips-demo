@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2d6a2d">
+    <meta name="description" content="Event Gallery | Tulips Eventz — Professional Wedding & Event Planners in Coimbatore.">
+    <title>Gallery | Tulips Eventz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="petals-canvas" id="petalsCanvas"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="services.html" onclick="closeMob()">Services</a>
+  <a href="gallery.html" onclick="closeMob()">Gallery</a>
+  <a href="booking.html" onclick="closeMob()">Booking</a>
+</div>
+
+<nav id="navbar" class="scrolled">
+  <div class="nav-logo">
+    <div class="logo-name">Tulips<span>Eventz</span></div>
+    <div class="logo-sub">Events & Wedding Planners</div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="booking.html" class="nav-cta">Book Now</a>
+  </div>
+  <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<section id="gallery" style="padding-top:120px;">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">✦ Our Work</span>
+      <h2 class="section-title">Event Gallery</h2>
+      <p class="section-sub">Real events. Real magic. Every setup crafted by Tulips Eventz.</p>
+    </div>
+    <div class="gallery-tabs">
+      <div class="gtab active" onclick="filterGallery('all',this)">All Events</div>
+      <div class="gtab" onclick="filterGallery('wedding',this)">Weddings</div>
+      <div class="gtab" onclick="filterGallery('birthday',this)">Birthday</div>
+      <div class="gtab" onclick="filterGallery('corporate',this)">Corporate</div>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item" data-cat="wedding" onclick="openLb(0)"><img src="img/wedding-3.jpg"></div>
+      <div class="gallery-item" data-cat="wedding" onclick="openLb(1)"><img src="img/wedding-4.jpg"></div>
+      <div class="gallery-item" data-cat="wedding" onclick="openLb(2)"><img src="img/wedding-5.jpg"></div>
+      <div class="gallery-item" data-cat="wedding" onclick="openLb(3)"><img src="img/wedding-6.jpg"></div>
+      <div class="gallery-item" data-cat="birthday" onclick="openLb(4)"><img src="img/birthday-1.jpg"></div>
+      <div class="gallery-item" data-cat="birthday" onclick="openLb(5)"><img src="img/birthday-2.jpg"></div>
+      <div class="gallery-item" data-cat="birthday" onclick="openLb(6)"><img src="img/birthday-3.jpg"></div>
+      <div class="gallery-item" data-cat="corporate" onclick="openLb(7)"><img src="img/corporate-1.jpg"></div>
+      <div class="gallery-item" data-cat="wedding" onclick="openLb(8)"><img src="img/wedding-9.jpg"></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <div class="lb-close" onclick="closeLb()">✕</div>
+  <div class="lb-nav lb-prev" onclick="lbNav(-1)">‹</div>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-nav lb-next" onclick="lbNav(1)">›</div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Tulips Eventz</div>
+      <p class="footer-desc">Creating magical moments and grand celebrations since 2016. Your trusted partner for weddings and events in Coimbatore.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/tulipseventsandweddingplanners" target="_blank" class="social-btn">📸</a>
+        <a href="https://wa.me/919597082875" target="_blank" class="social-btn">💬</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contacts">
+        <div class="footer-contact-item">📞 +91 94451 06887</div>
+        <div class="footer-contact-item">💬 +91 95970 82875</div>
+        <div class="footer-contact-item">📧 tulipseventscbe@gmail.com</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Location</div>
+      <div class="footer-contacts">
+        <div class="footer-contact-item">📍 Coimbatore, Tamil Nadu</div>
+        <div class="footer-contact-item">⏰ Mon - Sat: 9 AM - 8 PM</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Tulips Eventz · Coimbatore, Tamil Nadu</div>
+    <div class="version-badge">v5.0 · Demo Version</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919597082875" target="_blank">💬</a>
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
